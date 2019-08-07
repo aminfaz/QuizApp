@@ -7,11 +7,9 @@ const instance = axios.create({
 
 class QuizAPI {
 
-    static getQuestions(successHandler) {
-        instance.get('/questions')
-            .then(function (response) {
-                successHandler(response.data.body);
-            });
+    static async getQuestions(successHandler) {
+        let response = await instance.get('/questions');
+        return response.data.body;
     }
 
 };

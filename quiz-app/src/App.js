@@ -5,6 +5,7 @@ import { shuffleArray } from './utils/array';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import QuizAPI from './api/QuizAPI';
+import ReactLoading from 'react-loading';
 
 class App extends Component {
   constructor(props) {
@@ -16,15 +17,12 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    let questionloaded = (quizQuestions) => {
-      shuffleArray(quizQuestions);
-      this.setState({
-        questions: quizQuestions
-      });
-    };
-
-    QuizAPI.getQuestions(questionloaded);
+  async componentDidMount() {
+    let quizQuestions = await QuizAPI.getQuestions();
+    shuffleArray(quizQuestions);
+    this.setState({
+      questions: quizQuestions
+    });
   }
 
   nextHandler = (event) => {
@@ -63,6 +61,33 @@ class App extends Component {
     return (questions && Array.isArray(questions) & this.state.counter === questions.length);
   }
 
+  hasQuestionsLoaded() {
+    var questions = this.state.questions;
+    return (questions && Array.isArray(questions) && questions.length > 0);
+  }
+
+  renderContent(){
+    if (this.hasQuestionsLoaded()) {
+      return this.renderQuestionContent();
+    }
+    else {
+      return this.renderLoadingContent();
+    }
+  }
+
+  renderLoadingContent() {
+    return (
+      <div className="loadingContainer">
+        <ReactLoading type={'spin'} color={'#53D2F9'} height={'100px'} width={'100px'} className="loading" />
+        Loading Questions....
+      </div>
+    );
+  }
+
+  renderQuestionContent() {
+    return this.hasAllQuestionsAnswered() ? this.renderResult() : this.renderQuiz();
+  }
+
   render() {
     return (
       <div className="App">
@@ -70,7 +95,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Quiz</h2>
         </div>
-        {this.hasAllQuestionsAnswered() ? this.renderResult() : this.renderQuiz()}
+        {this.renderContent()}
       </div>
     )
   }
