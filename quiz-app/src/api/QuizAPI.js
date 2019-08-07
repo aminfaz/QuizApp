@@ -9,7 +9,7 @@ class QuizAPI {
 
     static async getQuestions(successHandler) {
         let response = await instance.get('/questions');
-        return response.data.body;
+        return response.data;
     }
 
 };
