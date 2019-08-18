@@ -1,15 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -56,6 +56,10 @@ body {
   font-size: 14px;
 }
 
+.questionCount div {
+  margin: 2% auto;
+}
+
 /* Question Component */
 .question {
   margin: 0;
@@ -99,7 +103,7 @@ body {
   left: 38px;
   width: 28px;
   height: 28px;
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: middle;
   background: #fff;
@@ -109,7 +113,7 @@ body {
 }
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
-  content: '';
+  content: "";
   background: #8bc53f url(./svg/icon-check.svg) no-repeat;
   background-size: 27px;
   border-color: #8bc53f;
@@ -148,7 +152,7 @@ body {
 }
 
 .button {
-  background-color: #008CBA;
+  background-color: #008cba;
   border: none;
   color: white;
   padding: 1rem 3rem;
@@ -174,28 +178,54 @@ body {
   text-align: right;
 }
 
+.resultContainer {
+  text-align: center;
+  font-size: 20px;
+}
+
 .resultContainer-passed {
   color: #068f19;
 }
 
 .resultContainer-passed::before {
   display: block;
-  float: left;
   content: "";
-  width: 1.2rem;
-  height: 1.2rem;
-  background-color: #8bc53f;
-  background-image: url(./svg/icon-check.svg);
+  width: 5rem;
+  height: 5rem;
+  background-image: url(./svg/party.png);
   background-repeat: no-repeat;
   background-size: cover;
-  margin-right: 0.5rem;
+  margin: 5% auto;
 }
 
 .loadingContainer {
   text-align: center;
-  color: rgb(56, 143, 170);
+  color: #388faa;
 }
 
 .loading {
   margin: 40px auto;
+}
+
+.errorContainer {
+  padding: 7%;
+  text-align: center;
+  color: rgb(85, 85, 85);
+}
+
+.errorContainer div {
+  margin-top: 2rem;
+}
+
+.errorContainer::before {
+  display: block;
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background-color: rgb(255, 95, 95);
+  -webkit-mask-image: url(./svg/baseline-error_outline.svg);
+  -webkit-mask-size: cover;
+  mask-image: url(./svg/baseline-error_outline.svg);
+  mask-size: cover;
+  margin: auto;
 }
