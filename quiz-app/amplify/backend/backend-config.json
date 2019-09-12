@@ -1,0 +1,10 @@
+{
+    "auth": {
+        "QuizApp": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
+    "function": {}
+}

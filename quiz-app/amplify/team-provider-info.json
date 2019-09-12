@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "quiz-app-dev-20190819134408-authRole",
+            "UnauthRoleArn": "arn:aws:iam::718346810866:role/quiz-app-dev-20190819134408-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::718346810866:role/quiz-app-dev-20190819134408-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "quiz-app-dev-20190819134408-deployment",
+            "UnauthRoleName": "quiz-app-dev-20190819134408-unauthRole",
+            "StackName": "quiz-app-dev-20190819134408",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:718346810866:stack/quiz-app-dev-20190819134408/99e25b60-c233-11e9-863e-0665bfda7126"
+        },
+        "categories": {
+            "auth": {
+                "QuizApp": {}
+            }
+        }
+    }
+}
