@@ -15,5 +15,22 @@
                 "QuizApp": {}
             }
         }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "quiz-app-prod-20190916172357-authRole",
+            "UnauthRoleArn": "arn:aws:iam::718346810866:role/quiz-app-prod-20190916172357-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::718346810866:role/quiz-app-prod-20190916172357-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "quiz-app-prod-20190916172357-deployment",
+            "UnauthRoleName": "quiz-app-prod-20190916172357-unauthRole",
+            "StackName": "quiz-app-prod-20190916172357",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:718346810866:stack/quiz-app-prod-20190916172357/f25b0500-d852-11e9-b75b-0254a62a914c"
+        },
+        "categories": {
+            "auth": {
+                "QuizApp": {}
+            }
+        }
     }
 }
