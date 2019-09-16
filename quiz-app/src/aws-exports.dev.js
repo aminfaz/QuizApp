@@ -12,7 +12,7 @@ const awsmobile = {
     endpoints: [
       {
         name: "quizAPI",
-        endpoint: `https://de7u5nxssg.execute-api.ap-southeast-2.amazonaws.com/${env}`
+        endpoint: "https://de7u5nxssg.execute-api.ap-southeast-2.amazonaws.com/dev"
       }
     ]
   }
