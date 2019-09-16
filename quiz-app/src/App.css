@@ -22,3 +22,8 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --button-background-color: #55677D !important;
+  --button-click: rgb(56, 92, 136) !important;
+}
